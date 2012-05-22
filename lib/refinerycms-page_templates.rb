@@ -32,6 +32,7 @@ module Refinery
           plugin.hide_from_menu = true
           plugin.name = "page_templates"
           plugin.pathname = root
+          plugin.menu_match = /^\/?(admin|refinery)\/page_templates/
           plugin.activity = {
             :class => PageTemplate,
             :title => 'name',
