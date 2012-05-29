@@ -103,7 +103,7 @@ module Extensions
       # Create default snippets on every PagePart
       if defined?(Snippet) and Snippet.table_exists?
         parts.each do |part|
-          if (defined?(part.snippets) && part.snippets.present?) or part.snippets.nil? or part.snippets.empty?
+          if (defined?(part.snippets) && part.snippets.present?) && (part.snippets.nil? || part.snippets.empty?)
             part.snippets.size.times do
               part.snippets << Snippet.create(:snippet_template_path => part.default_snippet_template.path)
             end
